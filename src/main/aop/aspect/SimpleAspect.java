@@ -9,12 +9,15 @@ import org.springframework.stereotype.Component;
 @Component
 public class SimpleAspect {
 	
-	@Before("allGetters()")
+	@Before("allGetters() && allTriangleMethods()")
 	public void getLoggingAspect() {
 		System.out.println("Method Execution Starts");
 	}
 	
 	@Pointcut("execution(* get*(..))")
 	public void allGetters() {}
+	
+	@Pointcut("within(main.aop.dto.Triangle)")
+	public void allTriangleMethods() {}
 
 }
