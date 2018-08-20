@@ -13,10 +13,9 @@ public class Controller {
 		
 		ApplicationContext context=new ClassPathXmlApplicationContext("ApplicationContext.xml");
 		ShapeService shapeService=context.getBean("shapeService",ShapeService.class);
-		shapeService.getTriangle().setName("New Triangle");
 		System.out.println(shapeService.getTriangle().getName());
-		
-
+		shapeService.getCircle().setNameAndReturn("Type");
+		shapeService.getTriangle().setNameAndException("New Triangle");
 	}
 
 }

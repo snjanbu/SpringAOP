@@ -12,6 +12,9 @@ public class Circle {
 		this.name = name;
 	}
 	
-	
+	public String setNameAndReturn(String name) {
+		this.name=name;
+		return "return "+name;
+	}
 
 }

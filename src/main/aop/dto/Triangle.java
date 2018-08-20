@@ -10,6 +10,12 @@ public class Triangle {
 
 	public void setName(String name) {
 		this.name = name;
+		System.out.println("Method execution in Setter");
+	}
+	
+	public void setNameAndException(String name) {
+		this.name=name;
+		throw(new RuntimeException());
 	}
 
 }
