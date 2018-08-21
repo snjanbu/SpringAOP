@@ -40,7 +40,7 @@ public class SimpleAspect {
 		System.out.println(name);
 	}
 	
-	@Around("allTriangleMethods()")
+	@Around("@annotation(main.aop.annotation.Loggable)")
 	public Object aroundImplementation(ProceedingJoinPoint proceedingJoinPoint) {
 		Object returnValue=null;
 		try {
