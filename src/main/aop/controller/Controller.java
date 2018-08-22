@@ -16,6 +16,7 @@ public class Controller {
 		System.out.println(shapeService.getTriangle().getName());
 		shapeService.getCircle().setNameAndReturn("Type");
 		shapeService.getTriangle().setNameAndException("New Triangle");
+		shapeService.getTriangle().setName("XML Triangle");
 	}
 
 }

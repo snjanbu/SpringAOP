@@ -22,5 +22,12 @@
 		base-package="main.aop.aspect"></context:component-scan>
 
 	<context:annotation-config></context:annotation-config>
+	<bean id="xmlAspect" class="main.aop.aspect.XmlAspect"></bean>
 	<aop:aspectj-autoproxy proxy-target-class="true" />
+	<aop:config>
+	<aop:aspect id="xmlAspect" ref="xmlAspect">
+		<aop:pointcut expression="execution(* main.aop.dto.Triangle.setName(..))" id="methodAspect"/>
+		<aop:before method="printAspect" pointcut-ref="methodAspect"/>
+	</aop:aspect>
+	</aop:config>
 </beans>
